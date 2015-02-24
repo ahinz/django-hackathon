@@ -1,0 +1,5 @@
+env
+*.pyc
+.vagrant
+local_settings.py
+staticfiles

@@ -1,0 +1,13 @@
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '__djname__',
+        'USER': 'ftd',
+        'PASSWORD': 'ftd',
+        'HOST': 'localhost'
+    }
+}
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'get it from google'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'get it from google'
