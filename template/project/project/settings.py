@@ -68,9 +68,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-ROOT_URLCONF = '__djnames__.urls'
+ROOT_URLCONF = '__djname__.urls'
 
-WSGI_APPLICATION = '__djnames__.wsgi.application'
+WSGI_APPLICATION = '__djname__.wsgi.application'
 
 
 # Database

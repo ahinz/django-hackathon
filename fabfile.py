@@ -5,7 +5,10 @@ def vagrant():
     # change from the default user to 'vagrant'
     env.user = 'vagrant'
     # connect to the port-forwarded ssh
-    env.hosts = ['127.0.0.1:2222']
+    result = local('vagrant ssh-config | grep Port', capture=True)
+    port = result.split()[1]
+
+    env.hosts = ['127.0.0.1:%s' % port]
 
     # use vagrant ssh key
     result = local('vagrant ssh-config | grep IdentityFile', capture=True)
@@ -23,7 +26,7 @@ def reqs():
 
 def manage(cmd):
     python = "/home/vagrant/venv/bin/python"
-    with cd("/vagrant/__djname__"):
+    with cd("/vagrant/basedj"):
         run('"%s" manage.py %s' % (python, cmd))
 
 def server(port=8000):
